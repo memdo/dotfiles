@@ -44,7 +44,6 @@ exec --no-startup-id nm-applet
 exec polybar main &
 exec autokey-gtk
 exec picom --experimental-backends --backend glx
-exec wal -R -n &
 exec numlockx &
 exec i3status
 exec nitrogen --restore &

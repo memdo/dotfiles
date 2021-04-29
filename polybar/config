@@ -21,15 +21,15 @@ background = ${xrdb:color0:#222}
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
-secondary = ${xrdb:color2:#222}
+secondary = ${xrdb:color4:#222}
 alert = ${xrdb:color3:#222}
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 35
-;offset-x = 1%
-;offset-y = 1%
+;offset-x = 5%
+;offset-y = 5%
 radius = 0
 fixed-center = true
 
@@ -150,8 +150,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.secondary}
+label-focused-background = #060810
 label-focused-padding = 2
 label-focused-font = 3
 
@@ -173,11 +172,11 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 label-urgent-font = 3
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-default = 
+ws-icon-0 = 1;%{F#FF2525}%{F-} 
+ws-icon-1 = 2;%{F#4B8BBE}%{F-}
+ws-icon-2 = 3;%{F#EB8C34}%{F-}
+ws-icon-3 = 4;%{F#FFFF00}%{F-}
+ws-icon-default = %{F#FFFFFF}
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -202,7 +201,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.secondary}
-label =  |%percentage:2%%
+label = " |%percentage:2%% "
 
 [module/memory]
 type = internal/memory
@@ -210,7 +209,7 @@ interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.secondary}
-label =  | %percentage_used%%
+label = " | %percentage_used%% "
 
 [module/wlan]
 type = internal/network
