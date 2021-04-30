@@ -26,10 +26,10 @@ alert = ${xrdb:color3:#222}
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width = 99.5%
 height = 35
-;offset-x = 5%
-;offset-y = 5%
+offset-x = 0.25%
+offset-y = 0.5%
 radius = 0
 fixed-center = true
 
@@ -39,8 +39,10 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 0
-border-color = #00000000
+border-size = 3
+border-color = ${colors.foreground}
+
+margin-top = 5
 
 padding-left = 0
 padding-right = 1
@@ -55,16 +57,16 @@ font-3 = Font Awesome 5 Free:style=regular:pixelsize=13;1
 font-4 = Font Awesome 5 Free:style=solid:pixelsize=12;1
 
 
-modules-left = i3
-modules-center = date mpd bspwm
+modules-left = i3 bspwm
+modules-center = date mpd 
 modules-right = pulseaudio xkeyboard memory cpu wlan eth 
 
 tray-position = right
 tray-padding = -2
 ;tray-background = #0063ff
 
-;wm-restack = bspwm
-wm-restack = i3
+wm-restack = bspwm
+;wm-restack = i3
 
 ;override-redirect = true
 
@@ -150,7 +152,8 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %icon%
-label-focused-background = #060810
+label-focused-background = ${colors.background}
+label-focused-underline = ${colors.secondary}
 label-focused-padding = 2
 label-focused-font = 3
 
@@ -332,8 +335,8 @@ screenchange-reload = true
 ;compositing-border = over
 ;pseudo-transparency = true
 
-[global/wm]
-margin-top = 5
-margin-bottom = 5
+;[global/wm]
+;margin-top = 5
+;margin-bottom = 5
 
 ; vim:ft=dosini
