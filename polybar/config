@@ -27,11 +27,11 @@ alert = ${xrdb:color3:#222}
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 100%
+width = 98.8%
 height = 35
-;offset-x = 0.65%
-;offset-y = 1%
-radius = 0
+offset-x = 0.65%
+offset-y = 0.7%
+radius = 10
 fixed-center = true
 
 background = ${colors.background}
@@ -40,11 +40,11 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 3
+border-size = 0
 border-color = ${colors.background}
 
-padding-left = 0
-padding-right = 1
+padding-left = 1
+padding-right = 2
 
 module-margin-left = 1
 module-margin-right = 0
@@ -61,7 +61,7 @@ modules-center = date mpd
 modules-right = pulseaudio xkeyboard memory cpu wlan eth 
 
 tray-position = right
-tray-padding = -2
+tray-padding = -20
 ;tray-background = #0063ff
 
 wm-restack = bspwm
@@ -114,21 +114,21 @@ label-indicator-underline = ${colors.secondary}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
+label-focused = %name%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.secondary}
-label-focused-padding = 2
+label-focused-padding = 1.5
 
-label-occupied = %index%
-label-occupied-padding = 2
+label-occupied = %name%
+label-occupied-padding = 1.5
 
-label-urgent = %index%!
+label-urgent = %name%!
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1.5
 
-label-empty = %index%
+label-empty = %name%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
+label-empty-padding = 1.5
 
 ws-icon-0 = 1;%{F#FF2525}%{F-} 
 ws-icon-1 = 2;%{F#4B8BBE}%{F-}
