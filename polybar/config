@@ -18,6 +18,7 @@
 
 [colors]
 background = ${xrdb:color0:#222}
+background-alt = ${xrdb:color1:#222}
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
@@ -26,10 +27,10 @@ alert = ${xrdb:color3:#222}
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 99.5%
+width = 100%
 height = 35
-offset-x = 0.25%
-offset-y = 0.5%
+;offset-x = 0.65%
+;offset-y = 1%
 radius = 0
 fixed-center = true
 
@@ -40,9 +41,7 @@ line-size = 3
 line-color = #f00
 
 border-size = 3
-border-color = ${colors.foreground}
-
-margin-top = 5
+border-color = ${colors.background}
 
 padding-left = 0
 padding-right = 1
@@ -89,10 +88,11 @@ blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
+format-prefix-underline = ${xrdb:color8:#222}
 
 label-layout = "%layout% "
-label-layout-underline = ${colors.secondary}
+label-layout-underline = ${xrdb:color8:#222}
+label-layout-foreground = ${xrdb:color8:#222}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -116,7 +116,7 @@ type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
+label-focused-underline= ${colors.secondary}
 label-focused-padding = 2
 
 label-occupied = %index%
@@ -130,9 +130,11 @@ label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-default = 
+ws-icon-0 = 1;%{F#FF2525}%{F-} 
+ws-icon-1 = 2;%{F#4B8BBE}%{F-}
+ws-icon-2 = 3;%{F#EB8C34}%{F-}
+ws-icon-3 = 4;%{F#FFFF00}%{F-}
+ws-icon-default = %{F#FFFFFF}
 
 ; Separator in between workspaces
 ; label-separator = |
@@ -203,7 +205,8 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.secondary}
+format-underline = ${xrdb:color10:#222}
+format-foreground = ${xrdb:color10:#222}
 label = " |%percentage:2%% "
 
 [module/memory]
@@ -211,7 +214,8 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.secondary}
+format-underline = ${xrdb:color11:#222}
+format-foreground = ${xrdb:color11:#222}
 label = " | %percentage_used%% "
 
 [module/wlan]
@@ -272,9 +276,9 @@ label = "%time% %date% "
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-format-volume-underline = ${colors.secondary}
+format-volume-underline = ${xrdb:color9:#222}
 label-volume = 
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${xrdb:color9:#222}
 label-volume-font = 4
 
 label-muted = 🔇 muted
@@ -289,9 +293,10 @@ bar-volume-foreground-2 = #55aa55
 bar-volume-foreground-3 = #55aa55
 bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = ${colors.secondary}
+bar-volume-foreground-6 = ${xrdb:color9:#222}
 bar-volume-gradient = false
 bar-volume-indicator = 
+bar-volume-indicator-foreground = ${xrdb:color9:#222}
 bar-volume-indicator-font = 4
 bar-volume-fill = ─
 bar-volume-fill-font = 2

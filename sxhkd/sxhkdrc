@@ -17,7 +17,8 @@ shift + alt + Escape
 
 ctrl + alt + m
     sh /home/berkay/.config/polybar/launch.sh
-
+ctrl + alt + l
+    sh /home/berkay/.config/picom/launch.sh
 # dmenu
 super + m
 	sh .config/i3/dmenu.sh
