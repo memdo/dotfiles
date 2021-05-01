@@ -24,11 +24,16 @@ foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color4:#222}
 alert = ${xrdb:color3:#222}
+shade1 = #324461
+shade2 = #243754
+shade3 = #1B2C47
+shade4 = #102038
+shade5 = #607D8B
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 98.8%
-height = 35
+height = 40
 offset-x = 0.65%
 offset-y = 0.7%
 radius = 10
@@ -43,10 +48,10 @@ line-color = #f00
 border-size = 0
 border-color = ${colors.background}
 
-padding-left = 1
-padding-right = 2
+padding-left = 0
+padding-right = 0
 
-module-margin-left = 1
+module-margin-left = 0
 module-margin-right = 0
 
 font-0 = Iosevka Extended:style=bold:pixelsize=13;2
@@ -54,11 +59,12 @@ font-1 = SF Mono:pixelsize=13;1
 font-2 = Font Awesome 5 Brands:pixelsize=13;1
 font-3 = Font Awesome 5 Free:style=regular:pixelsize=13;1
 font-4 = Font Awesome 5 Free:style=solid:pixelsize=12;1
+font-5 = FiraCode Nerd Font:style=light,regular:pixelsize=25;5
 
 
-modules-left = i3 bspwm
-modules-center = date mpd 
-modules-right = pulseaudio xkeyboard memory cpu wlan eth 
+modules-left = i3 bspwm 
+modules-center = center7 center5 center3 center1 date center2 center4 center6 center8 mpd 
+modules-right = right1 pulseaudio right2 xkeyboard right3 memory right4 cpu right5 wlan eth 
 
 tray-position = right
 tray-padding = -20
@@ -78,26 +84,105 @@ wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[module/right1]
+type = custom/text
+content-foreground = ${colors.shade1}
+content-margin-top = 10
+content = "%{T6}%{T-}"
+
+[module/right2]
+type = custom/text
+content-background = ${colors.shade1}
+content-foreground = ${colors.shade2}
+content = "%{T6}%{T-}"
+
+[module/right3]
+type = custom/text
+content-background = ${colors.shade2}
+content-foreground = ${colors.shade3}
+content = "%{T6}%{T-}"
+
+[module/right4]
+type = custom/text
+content-background = ${colors.shade3}
+content-foreground = ${colors.shade4}
+content = "%{T6}%{T-}"
+
+[module/right5]
+type = custom/text
+content-background = ${colors.shade4}
+content-foreground = ${colors.shade4}
+content = "%{T6}%{T-}"
+
+[module/center1]
+type = custom/text
+content-background = ${colors.shade2}
+content-foreground = ${colors.shade1}
+content = "%{T6}%{T-}"
+
+[module/center2]
+type = custom/text
+content-background = ${colors.shade2}
+content-foreground = ${colors.shade1}
+content = "%{T6}%{T-}"
+
+[module/center3]
+type = custom/text
+content-background = ${colors.shade3}
+content-foreground = ${colors.shade2}
+content = "%{T6}%{T-}"
+
+[module/center4]
+type = custom/text
+content-background = ${colors.shade3}
+content-foreground = ${colors.shade2}
+content = "%{T6}%{T-}"
+
+[module/center5]
+type = custom/text
+content-background = ${colors.shade4}
+content-foreground = ${colors.shade3}
+content = "%{T6}%{T-}"
+
+[module/center6]
+type = custom/text
+content-background = ${colors.shade4}
+content-foreground = ${colors.shade3}
+content = "%{T6}%{T-}"
+
+[module/center7]
+type = custom/text
+content-foreground = ${colors.shade4}
+content = "%{T6}%{T-}"
+
+[module/center8]
+type = custom/text
+content-foreground = ${colors.shade4}
+content = "%{T6}%{T-}"
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:%
 
 [module/xkeyboard]
 type = internal/xkeyboard
+format = <label-layout><label-indicator>
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${xrdb:color8:#222}
+;format-prefix-underline = ${xrdb:color8:#222}
+format-prefix-background = ${colors.shade2}
 
-label-layout = "%layout% "
-label-layout-underline = ${xrdb:color8:#222}
+label-layout = "%layout%  "
+;label-layout-underline = ${xrdb:color8:#222}
 label-layout-foreground = ${xrdb:color8:#222}
+label-layout-background = ${colors.shade2}
 
-label-indicator-padding = 2
-label-indicator-margin = 1
+label-indicator-padding = 0
+label-indicator-margin = 0
 label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
+;label-indicator-underline = ${colors.secondary}
 
 ;[module/filesystem]
 ;type = internal/fs
@@ -114,9 +199,9 @@ label-indicator-underline = ${colors.secondary}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %name%
+label-focused = %{F#61AFEF}[%name%%{F#61AFEF}]
 label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.secondary}
+;label-focused-underline= ${colors.secondary}
 label-focused-padding = 1.5
 
 label-occupied = %name%
@@ -205,8 +290,9 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color10:#222}
+;format-underline = ${xrdb:color10:#222}
 format-foreground = ${xrdb:color10:#222}
+format-background = ${colors.shade4}
 label = " |%percentage:2%% "
 
 [module/memory]
@@ -214,9 +300,10 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color11:#222}
+;format-underline = ${xrdb:color11:#222}
 format-foreground = ${xrdb:color11:#222}
-label = " | %percentage_used%% "
+format-background = ${colors.shade3}
+label = " | %percentage_used%%  "
 
 [module/wlan]
 type = internal/network
@@ -261,32 +348,34 @@ type = internal/date
 interval = 1
 
 date =
-date-alt = "| %d %m %y"
+date-alt = " | %d %m %y"
 
-time = "%H:%M"
+time = "  %H:%M  "
 time-alt = "%H:%M:%S"
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
+format-background = ${colors.shade1}
 ;format-underline = ${colors.secondary}
 
-label = "%time% %date% "
+label = "%time%%date%"
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-format-volume-underline = ${xrdb:color9:#222}
+;format-volume-underline = ${xrdb:color9:#222}
+format-volume-background = ${colors.shade1}
 label-volume = 
 label-volume-foreground = ${xrdb:color9:#222}
 label-volume-font = 4
 
 label-muted = 🔇 muted
 label-muted-foreground = #666
-label-muted-underline = ${colors.secondary}
+;label-muted-underline = ${colors.secondary}
 
 bar-volume-width = 10
-bar-volume-underline-0 = ${colors.primary}
+;bar-volume-underline-0 = ${colors.primary}
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -295,7 +384,7 @@ bar-volume-foreground-4 = #55aa55
 bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = ${xrdb:color9:#222}
 bar-volume-gradient = false
-bar-volume-indicator = 
+bar-volume-indicator = "  "
 bar-volume-indicator-foreground = ${xrdb:color9:#222}
 bar-volume-indicator-font = 4
 bar-volume-fill = ─

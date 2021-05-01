@@ -4,7 +4,7 @@ setxkbmap -layout tr -variant f -option caps:escape
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-bspc monitor -d " www " " dev " "study" "music" " git "
+bspc monitor -d "%{F#61AFEF} www%{F-} " " %{F#98C379}dev %{F-}" "%{F#E5C07B}study%{F-}" "%{F#F17421}music%{F-}" " %{F#D13E21}git%{F-} "
 
 bspc config border_width        4
 bspc config border_radius       15
