@@ -7,7 +7,7 @@ super + Return
 	alacritty
 # browser
 super + w
-    firefox
+    firefox-nightly
 
 # change desktop
 alt + Escape
@@ -22,6 +22,9 @@ ctrl + alt + l
 # dmenu
 super + m
 	sh .config/i3/dmenu.sh
+
+super + space
+    rofi -modi drun -show
 
 # make sxhkd reload its configuration files:
 super + Escape

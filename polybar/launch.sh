@@ -15,3 +15,4 @@ nitrogen --restore &
 xrdb -load .Xresources
 
 polybar main &
+polybar now-playing &
