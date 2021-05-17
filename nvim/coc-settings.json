@@ -1,0 +1,13 @@
+{
+  "python.linting.enabled": true,
+  "python.jediEnabled": true,
+  "python.formatting.provider": "black",
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs":[
+    "--extension-pkg-whitelist=pygame",
+    "--errors-only"
+  ],
+  "rust-client.enable": false,
+  "clangd.enable": true,
+  "clangd.path": "/home/berkay/.config/coc/extensions/coc-clangd-data/install/11.0.0/clangd_11.0.0/bin/clangd",
+}
