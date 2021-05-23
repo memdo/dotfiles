@@ -8,6 +8,7 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
+    Plug 'yuezk/vim-js'
 
     " Color Preview
     Plug 'ap/vim-css-color'    
@@ -20,7 +21,6 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'Luxed/ayu-vim'
     Plug 'joshdick/onedark.vim'
     Plug 'fatih/molokai'
-    Plug 'crusoexia/vim-monokai'
 
     " Autocompletion
     Plug 'neoclide/coc.nvim',{'branch': 'release'}

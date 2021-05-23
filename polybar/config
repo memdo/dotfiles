@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #192025
+background = #1F1F1F
 background-alt = ${xrdb:color1:#222}
 foreground = #d6d6d6
 foreground-alt = ${xrdb:color7:#222}
@@ -36,7 +36,7 @@ width = 40%
 height = 40
 offset-x = 30%
 offset-y = 2%
-radius = 0.0
+radius = 15.0
 fixed-center = true
 
 background = ${colors.background}
@@ -46,7 +46,8 @@ line-size = 0
 line-color = #f00
 
 border-size = 3
-border-color = #252d33
+border-color = #2f3542
+border-radius = 15.0
 
 padding-left = 3
 padding-right = 3
@@ -93,7 +94,7 @@ width = 26%
 height = 40
 offset-x = 2%
 offset-y = 2%
-radius = 0.0
+radius = 15.0
 fixed-center = true
 enable-ipc = true
 
@@ -104,7 +105,8 @@ line-size = 0
 line-color = #f00
 
 border-size = 3
-border-color = #252d33
+border-color = #2f3542
+border-radius = 15.0
 
 padding-left = 3
 padding-right = 3
@@ -192,7 +194,7 @@ label-indicator-background = ${colors.secondary}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = "%{F#5E81AC}◥%{F-}%{F#5E81AC}%name%%{F-}%{F#5E81AC}◤%{F-}"
+label-focused = "%{F#5E81AC}(%{F-}%{F#5E81AC}%name%%{F-}%{F#5E81AC})%{F-}"
 # label-focused-background = ${colors.background-alt}
 label-focused-padding = 1.5
 

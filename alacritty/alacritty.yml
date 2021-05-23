@@ -109,10 +109,10 @@ font:
     # Font family
     #
     # Default:
-    #   - (macOS)  FiraCode Nerd Font Mono  Extended
+    #   - (macOS)  JetBrains Mono Mono  Extended
     #   - (Linux/BSD) monospace
-    #   - (Windows)  FiraCode Nerd Font Mono  Extended
-    family: JetBrains Mono 
+    #   - (Windows)  JetBrains Mono Mono  Extended
+    family: JetBrains Mono
 
     # The `style` can be specified to pick a specific face.
     style: Medium
@@ -123,7 +123,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraCode Nerd Font
+    family: JetBrains Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -134,7 +134,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraCode Nerd Font
+    family: JetBrains Mono
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -145,13 +145,13 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: FiraCode Nerd Font
+    family: JetBrains Mono
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 17.0
+  size: 17.5
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
   # spacing.
@@ -229,8 +229,8 @@ font:
 colors:
   # Default colors
   primary:
-    background: '#1B1D1E'
-    #background: '#000000'
+    background: '#1A1A1A'
+    # background: '#1B1D1E'
     foreground: '#abb2bf'
 
     # Bright and dim foreground colors
@@ -322,7 +322,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-# background_opacity: 0.5
+# background_opacity: 0.7
 
 #selection:
   # This string contains all characters that are used as separators for

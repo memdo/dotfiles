@@ -19,12 +19,13 @@ ctrl + alt + m
     sh /home/berkay/.config/polybar/launch.sh
 ctrl + alt + l
     sh /home/berkay/.config/picom/launch.sh
-# dmenu
-super + m
-	sh .config/i3/dmenu.sh
 
-super + space
+# rofi
+super + m
     rofi -modi drun -show
+
+super + @space
+    rofi -modi run -show
 
 # make sxhkd reload its configuration files:
 super + Escape

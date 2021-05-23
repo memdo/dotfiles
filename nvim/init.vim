@@ -1,8 +1,8 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/plug-config/coc.vim
 
-filetype plugin indent on
-syntax on 
+"filetype plugin indent on
+"syntax on 
 
 fu Run()
 	if &filetype ==# 'python'
@@ -14,8 +14,8 @@ fu Run()
         exec winheight(0)/2."split" | terminal gcc % -o main -lm; ./main 
     elseif &filetype ==# 'rust'
 		exec winheight(0)/2."split" | terminal cargo run
-	elseif &filetype ==# 'go'
-		exec winheight(0)/2."split" | terminal go run .
+	elseif &filetype ==# 'java'
+		exec winheight(0)/2."split" | terminal java -classpath /home/berkay/Desktop/Algorithms/lib/algs4.jar %
 	elseif &filetype ==# 'cpp'
 		exec winheight(0)/2."split" | terminal g++ % -o main -Wall -lm; ./main
 	else
@@ -49,14 +49,14 @@ let g:tokyonight_style = "night"
 let g:tokyonight_enable_italic = 1
 let g:ayucolor="mirage"
 let g:onedark_termcolors=256
-let g:airline_left_sep = "\uE0B4"
-let g:airline_right_sep = "\uE0B6"
+let g:airline_left_sep = "\uE0B0"
+let g:airline_right_sep = "\uE0B2"
 let g:AutoPairsMapCR=0
 
 " au VimEnter * NERDTree | wincmd p
 " au VimEnter * call GetTerm()
 
-colorscheme molokai
+colorscheme onedark
 
 map <C-k> :NERDTreeToggle<CR>
 map <C-l> :call Run()<CR>:call feedkeys("a")<CR>
