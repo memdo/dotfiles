@@ -9,6 +9,9 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     " Better Syntax Support
     Plug 'sheerun/vim-polyglot'
     Plug 'yuezk/vim-js'
+    
+    " Term Transparency
+    Plug 'miyakogi/seiya.vim'
 
     " Color Preview
     Plug 'ap/vim-css-color'    
@@ -21,6 +24,8 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'Luxed/ayu-vim'
     Plug 'joshdick/onedark.vim'
     Plug 'fatih/molokai'
+    Plug 'ErichDonGubler/vim-sublime-monokai'
+    Plug 'morhetz/gruvbox'
 
     " Autocompletion
     Plug 'neoclide/coc.nvim',{'branch': 'release'}
@@ -34,8 +39,4 @@ call plug#begin('~/.config/nvim/autoload/plugged')
 
     " Autosave
     Plug '907th/vim-auto-save'
-
-    " Neovim in Browser	
-    Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } 
-
 call plug#end()

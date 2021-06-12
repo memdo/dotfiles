@@ -4,18 +4,18 @@ setxkbmap -layout tr -variant f -option caps:escape
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-# bspc monitor -d " %{F#61AFEF}I%{F-} " " %{F#98C379}II%{F-} " " %{F#E5C07B}III%{F-} " " %{F#F17421}IV%{F-} " " %{F#D13E21}V%{F-} "
-bspc monitor -d " I " " II " " III " " IV " " V " 
+bspc monitor -d  "I" "II" "III" "IV" "V"
+#bspc monitor -d "   " "  " "  " "  " "  " 
 
 bspc config border_width        2
-# bspc config border_radius       12
-bspc config window_gap          25
+#bspc config border_radius       10
+bspc config window_gap          10
 
 bspc config split_ratio             0.50
 bspc config borderless_monocle      true
 bspc config gapless_monocle         false
-bspc config normal_border_color     "#121414" #"#434C5E" # "#1E2127"     
-bspc config focused_border_color    "#2f3542"
+bspc config normal_border_color     "#141414" #"#434C5E" # "#1E2127"     
+bspc config focused_border_color    "#303030"
 bspc config focus_follows_pointer   true
 
 bspc rule -a Gimp desktop='^8' state=floating follow=on

@@ -6,7 +6,7 @@ source $HOME/.config/nvim/plug-config/coc.vim
 
 fu Run()
 	if &filetype ==# 'python'
-		exec winheight(0)/2."split" | terminal python %
+		exec winheight(0)/2."split" | terminal pipenv run python %
 	elseif &filetype ==# 'javascript'
 		exec winheight(0)/2."split" | terminal node %
 	elseif &filetype ==# 'c'
@@ -15,7 +15,8 @@ fu Run()
     elseif &filetype ==# 'rust'
 		exec winheight(0)/2."split" | terminal cargo run
 	elseif &filetype ==# 'java'
-		exec winheight(0)/2."split" | terminal java -classpath /home/berkay/Desktop/Algorithms/lib/algs4.jar %
+		" exec winheight(0)/2."split" | terminal java -classpath /home/berkay/Desktop/Algorithms/lib/algs4.jar %
+        exec winheight(0)/2."split" | terminal java %
 	elseif &filetype ==# 'cpp'
 		exec winheight(0)/2."split" | terminal g++ % -o main -Wall -lm; ./main
 	else
@@ -40,23 +41,21 @@ set termguicolors
 set splitbelow
 set cmdheight=1
 set nocompatible
+set list lcs=tab:\|\ 
+" set guicursor=n-v-c:hor25,i-ci-r-cr:ver20
 
-let g:airline_theme="onedark"
+let g:airline_theme="base16_monokai"
 let g:NERDTreeWinSize=20
 let g:NERDTreeShowHidden=1
 let g:auto_save=1
-let g:tokyonight_style = "night"
-let g:tokyonight_enable_italic = 1
-let g:ayucolor="mirage"
 let g:onedark_termcolors=256
-let g:airline_left_sep = "\uE0B0"
-let g:airline_right_sep = "\uE0B2"
+let g:gruvbox_constrast_dark="soft"
+let g:gruvbox_transparent_bg=1
 let g:AutoPairsMapCR=0
+let g:seiya_auto_enable=1
+let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
 
-" au VimEnter * NERDTree | wincmd p
-" au VimEnter * call GetTerm()
-
-colorscheme onedark
+colorscheme gruvbox
 
 map <C-k> :NERDTreeToggle<CR>
 map <C-l> :call Run()<CR>:call feedkeys("a")<CR>
