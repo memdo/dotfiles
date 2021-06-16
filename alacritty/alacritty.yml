@@ -1,10 +1,9 @@
-background_opacity: 0.8
+background_opacity: 1
 window:
-  padding:
-     x: 4
-  #   y: 
-  
   dynamic_padding: true
+  offset:
+    x: 4
+    y: 1
 
   gtk_theme_variant: dark
 
@@ -13,23 +12,23 @@ scrolling:
 
 font:
   normal:
-    family: Noto Sans Mono
-    style: Medium
+    family: Iosevka
+    style: Semibold Extended
 
   bold:
-    family: Noto Sans Mono
-    style: Bold
+    family: Iosevka
+    style: Bold Extended
   
   italic:
-    family: Noto Sans Mono
-    style: Bold Italic 
+    family: Iosevka
+    style: Semibold Extended Italic 
   
   bold_italic:
-    family: Noto Sans Mono
-    style: Bold Italic
+    family: Iosevka
+    style: Bold Extended Italic
   
-  size: 17.5
- 
+  size: 18.5
+
   draw_bold_text_with_bright_colors: true
 
 colors:
