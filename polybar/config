@@ -301,8 +301,8 @@ label-empty-padding = 1.5
 
 ws-icon-0 = I;main
 ws-icon-1 = II;code
-ws-icon-2 = III;work
-ws-icon-3 = IV;spot
+ws-icon-2 = III;spot
+ws-icon-3 = IV;disc
 ws-icon-4 = V;misc
 ws-icon-default = o
 

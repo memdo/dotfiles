@@ -1,6 +1,5 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
 source $HOME/.config/nvim/plug-config/coc.vim
-
 "filetype plugin indent on
 "syntax on 
 
@@ -23,10 +22,6 @@ fu Run()
 		echom "unsupported filetype"
 	endif
 endfu
-
-exec "set t_8f=\e[38;2;%lu;%lu;%lum"
-exec "set t_8b=\e[48;2;%lu;%lu;%lum"
-set t_Co=256
 
 set scl=no
 set number
@@ -55,7 +50,7 @@ let g:AutoPairsMapCR=0
 let g:seiya_auto_enable=1
 let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
 
-colorscheme gruvbox
+colorscheme onedark
 
 map <C-k> :NERDTreeToggle<CR>
 map <C-l> :call Run()<CR>:call feedkeys("a")<CR>

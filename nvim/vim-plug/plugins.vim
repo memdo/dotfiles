@@ -20,12 +20,11 @@ call plug#begin('~/.config/nvim/autoload/plugged')
     Plug 'scrooloose/NERDTree'
 
     " Theme
-    Plug 'cocopon/iceberg.vim'
-    Plug 'Luxed/ayu-vim'
     Plug 'joshdick/onedark.vim'
     Plug 'fatih/molokai'
     Plug 'ErichDonGubler/vim-sublime-monokai'
     Plug 'morhetz/gruvbox'
+    Plug 'metalelf0/jellybeans-nvim'
 
     " Autocompletion
     Plug 'neoclide/coc.nvim',{'branch': 'release'}

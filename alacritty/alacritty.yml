@@ -1,9 +1,8 @@
 background_opacity: 1
 window:
-  dynamic_padding: true
-  offset:
+  padding:
     x: 4
-    y: 1
+    y: 4
 
   gtk_theme_variant: dark
 
@@ -12,28 +11,28 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka
-    style: Semibold Extended
+    family: Meslo LG L
+    style: 
 
   bold:
-    family: Iosevka
-    style: Bold Extended
+    family: Meslo LG L
+    style: Bold
   
   italic:
-    family: Iosevka
-    style: Semibold Extended Italic 
+    family: Meslo LG L
+    style: Medium Italic 
   
   bold_italic:
-    family: Iosevka
-    style: Bold Extended Italic
+    family: Meslo LG L
+    style: Bold Italic
   
-  size: 18.5
+  size: 19
 
-  draw_bold_text_with_bright_colors: true
+  # draw_bold_text_with_bright_colors: true
 
 colors:
   primary:
-    background: '#282828'
+    background: '#191919'
     # background: '#1A1A1A'
     foreground: '#abb2bf'
     #dim_foreground: '#9a9a9a'
@@ -41,13 +40,13 @@ colors:
 
   normal:
     black:   '#1e2127'
-    red:     '#e06c75'
-    green:   '#98c379'
-    yellow:  '#d19a66'
-    blue:    '#61afef'
-    magenta: '#c678dd'
-    cyan:    '#56b6c2'
-    white:   '#828791'
+    red:     '#f7768e'
+    green:   '#9ece6a'
+    yellow:  '#e0af68'
+    blue:    '#7aa2f7'
+    magenta: '#bb9af7'
+    cyan:    '#73daca'
+    white:   '#565f89'
   bright:
     black:   '#5c6370'
     red:     '#e06c75'
