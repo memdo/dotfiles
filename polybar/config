@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #cc1F1F1F
+background = #1e1e1e
 background-alt = ${xrdb:color1:#222}
 foreground = #d6d6d6
 foreground-alt = ${xrdb:color7:#222}
@@ -32,11 +32,11 @@ shade5 = #88607D8B
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
-#width = 40%
-height = 33
-#offset-x = 29.9%
-#offset-y = 0.5%
-#radius-bottom = 15.0
+width = 98.7772%
+height = 31
+offset-x = 0.55%
+offset-y = 1%
+radius = 6.0
 fixed-center = true
 enable-ipc = true
 
@@ -46,25 +46,24 @@ foreground = ${colors.foreground}
 line-size = 0
 line-color = #f00
 
-#border-size = 3
-# border-color = #2f3542
-#border-color = #1F1F1F
+border-size = 3
+border-color = #302d2c
 border-radius = 15.0
 
-padding-left = 3
+padding-left = 0
 padding-right = 3
 
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Iosevka:style=bold:pixelsize=13;3
+font-0 = Iosevka Extended:style=bold:pixelsize=12.5;3
 font-1 = Font Awesome 5 Free:style=solid:pixelsize=12;3
 font-2 = FiraCode Nerd Font:style=light,regular:pixelsize=12;3
 font-3 = Font Awesome 5 Free:style=regular:pixelsize=12;3
 
 ;modules-left = launch rofi divider apps browser term files code spot xkill 
-modules-left = date spotify spotify-prev spotify-play-pause spotify-next
-modules-center =  bspwm
+modules-left = bspwm
+modules-center = date
 modules-right = pulseaudio
 ;modules-left = i3 bspwm 
 ;modules-center = date mpd 
@@ -204,44 +203,10 @@ inherit = module/apps
 content = "code"
 click-left = vscodium &
 
-[module/spot]
-inherit = module/apps
-content = "spotify"
-click-left = spotify &
-
 ; [module/xkill]
 ; inherit = module/apps
 ; content = "  "
 ; click-left = sleep 0.1 && bspc node -c &
-
-[module/spotify]
-type = custom/script
-tail = true
-; prefix symbol is shown before the text
-format-prefix = "     "
-format = <label>
-exec = ~/.config/polybar/scripts/scroll_spotify_status.sh
-
-[module/spotify-prev]
-type = custom/script
-# exec = echo ""
-exec = echo "   "
-format = <label> 
-click-left = playerctl -p spotify previous
-
-[module/spotify-play-pause]
-type = custom/ipc
-hook-0 = echo ""
-hook-1 = echo ""
-initial = 1
-click-left = playerctl -p spotify play-pause
-
-[module/spotify-next]
-type = custom/script
-# exec = echo ""
-exec = echo "  "
-format = <label>
-click-left = playerctl -p spotify next
 
 [module/xwindow]
 type = internal/xwindow
@@ -282,18 +247,22 @@ label-indicator-background = ${colors.secondary}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = "%{F#349CFE} %icon% %{F-}"
+;label-focused = "%{F#349CFE} %icon% %{F-}"
+label-focused = " %icon% "
+label-focused-background = "#302d2c"
 label-focused-padding = 1.5
 
 label-occupied = " %icon% "
+label-occupied-foreground = "#504945" 
 label-occupied-padding = 1.5
 
 label-urgent = " %icon%! "
+label-urgent-foreground = "#504945"
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 1.5
 
 label-empty = " %icon% "
-label-empty-foreground = ${colors.foreground-alt}
+label-empty-foreground = "#504945"
 label-empty-padding = 1.5
 
 ; Separator in between workspaces
@@ -432,10 +401,10 @@ type = internal/date
 interval = 1
 
 date =
-date-alt = "%{F#11DFEF}%A, %d %B %Y%{F-} - "
+date-alt = "%A, %d %B %Y - "
 
-time-alt = "%{F#349CFE}%H:%M:%S"
-time = "%{F#11DFEF}%H:%M:%S%{F-}"
+time-alt = "%H:%M:%S"
+time = "%H:%M:%S"
 
 format-prefix = "" 
 format-prefix-font = 

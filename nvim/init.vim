@@ -1,12 +1,8 @@
 source $HOME/.config/nvim/vim-plug/plugins.vim
-source $HOME/.config/nvim/plug-config/coc.vim
-"filetype plugin indent on
-"syntax on 
 
 fu Run()
 	if &filetype ==# 'python'
-		exec winheight(0)/2."split" | terminal pipenv run python %
-	elseif &filetype ==# 'javascript'
+		exec winheight(0)/2."split" | terminal pipenv run python % elseif &filetype ==# 'javascript'
 		exec winheight(0)/2."split" | terminal node %
 	elseif &filetype ==# 'c'
     	" exec winheight(0)/2."split" | terminal gcc % -o main -lm -std=iso9899:1990; ./main
@@ -25,33 +21,58 @@ endfu
 
 set scl=no
 set number
-set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set nowrap
-set background=dark
-set encoding=UTF-8
 set termguicolors
 set splitbelow
 set cmdheight=1
-set nocompatible
-set list lcs=tab:\|\ 
-" set guicursor=n-v-c:hor25,i-ci-r-cr:ver20
 
 let g:airline_theme="base16_monokai"
+let g:airline#extensions#tabline#enabled=0
 let g:NERDTreeWinSize=20
 let g:NERDTreeShowHidden=1
 let g:auto_save=1
 let g:onedark_termcolors=256
 let g:gruvbox_constrast_dark="soft"
 let g:gruvbox_transparent_bg=1
-let g:AutoPairsMapCR=0
 let g:seiya_auto_enable=1
 let g:seiya_target_groups = has('nvim') ? ['guibg'] : ['ctermbg']
-
 colorscheme onedark
 
 map <C-k> :NERDTreeToggle<CR>
 map <C-l> :call Run()<CR>:call feedkeys("a")<CR>
 tnoremap <Esc> <C-\><C-n>
+
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+    highlight = {
+        enable = true
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+        init_selection = "gnn",
+        node_incremental = "grn",
+        scope_incremental = "grc",
+        node_decremental = "grm",
+        }
+    },
+    indent = {
+        enable = false
+    }
+}
+EOF
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+inoremap <silent><expr> <C-Space> coc#refresh()
+
+inoremap <silent><expr> <CR> coc#_select_confirm()
