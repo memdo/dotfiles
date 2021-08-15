@@ -12,7 +12,7 @@ xrandr --output HDMI-A-0 --mode "1920x1080_75.50"
 
 nitrogen --restore &
 
-xrdb -load .Xresources
+#xrdb -load .Xresources
 
 polybar main &
 #polybar launcher &
