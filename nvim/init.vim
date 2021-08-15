@@ -2,7 +2,8 @@ source $HOME/.config/nvim/vim-plug/plugins.vim
 
 fu Run()
 	if &filetype ==# 'python'
-		exec winheight(0)/2."split" | terminal pipenv run python % elseif &filetype ==# 'javascript'
+		exec winheight(0)/2."split" | terminal pipenv run python %
+    elseif &filetype ==# 'javascript'
 		exec winheight(0)/2."split" | terminal node %
 	elseif &filetype ==# 'c'
     	" exec winheight(0)/2."split" | terminal gcc % -o main -lm -std=iso9899:1990; ./main
@@ -10,8 +11,8 @@ fu Run()
     elseif &filetype ==# 'rust'
 		exec winheight(0)/2."split" | terminal cargo run
 	elseif &filetype ==# 'java'
-		" exec winheight(0)/2."split" | terminal java -classpath /home/berkay/Desktop/Algorithms/lib/algs4.jar %
-        exec winheight(0)/2."split" | terminal java %
+		exec winheight(0)/2."split" | terminal java -classpath /home/berkay/Desktop/Algorithms/lib/algs4.jar %
+        " exec winheight(0)/2."split" | terminal java %
 	elseif &filetype ==# 'cpp'
 		exec winheight(0)/2."split" | terminal g++ % -o main -Wall -lm; ./main
 	else
