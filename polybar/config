@@ -17,7 +17,7 @@
 ;==========================================================
 
 [colors]
-background = #1e1e1e
+background = #001e1e1e
 background-alt = ${xrdb:color1:#222}
 foreground = #d6d6d6
 foreground-alt = ${xrdb:color7:#222}
@@ -32,23 +32,23 @@ shade5 = #88607D8B
 
 [bar/main]
 ;monitor = ${env:MONITOR:HDMI-1}
-width = 98.7772%
+width = 100%
 height = 31
-offset-x = 0.55%
-offset-y = 1%
-radius = 6.0
+;offset-x = 0.55%
+;offset-y = 1%
+;radius = 6.0
 fixed-center = true
 enable-ipc = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 0
+line-size = 2
 line-color = #f00
 
-border-size = 3
+border-size = 0
 border-color = #302d2c
-border-radius = 15.0
+;border-radius =
 
 padding-left = 0
 padding-right = 3
@@ -56,10 +56,11 @@ padding-right = 3
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = Iosevka Extended:style=bold:pixelsize=12.5;3
-font-1 = Font Awesome 5 Free:style=solid:pixelsize=12;3
+font-0 = Iosevka Extended:style=bold:pixelsize=12;3
+font-1 = Font Awesome 5 Free:style=solid:pixelsize=13;3
 font-2 = FiraCode Nerd Font:style=light,regular:pixelsize=12;3
-font-3 = Font Awesome 5 Free:style=regular:pixelsize=12;3
+font-3 = Font Awesome 5 Free:style=regular:pixelsize=13;3
+font-4 = NotoColorEmoji;style=Regular:pixelsize=13:antialias=false;3
 
 ;modules-left = launch rofi divider apps browser term files code spot xkill 
 modules-left = bspwm
@@ -247,32 +248,44 @@ label-indicator-background = ${colors.secondary}
 [module/bspwm]
 type = internal/bspwm
 
-;label-focused = "%{F#349CFE} %icon% %{F-}"
+;label-focused = "%{F#349CFE}  %icon%  %{F-}"
 label-focused = " %icon% "
+;label-focused-font = 2
 label-focused-background = "#302d2c"
+label-focused-underline = "#706965"
 label-focused-padding = 1.5
 
 label-occupied = " %icon% "
-label-occupied-foreground = "#504945" 
+label-occupied-foreground = "#706965" 
+;label-occupied-font = 4
 label-occupied-padding = 1.5
 
-label-urgent = " %icon%! "
-label-urgent-foreground = "#504945"
+label-urgent = "   %icon% !  "
+label-urgent-foreground = "#706965"
 label-urgent-background = ${colors.alert}
+;label-urgent-font = 4
 label-urgent-padding = 1.5
 
 label-empty = " %icon% "
-label-empty-foreground = "#504945"
+label-empty-foreground = "#706965"
+;label-empty-font = 4
 label-empty-padding = 1.5
 
 ; Separator in between workspaces
 ; label-separator = |
 
-ws-icon-0 = I;main
-ws-icon-1 = II;code
-ws-icon-2 = III;spot
-ws-icon-3 = IV;disc
-ws-icon-4 = V;misc
+;ws-icon-0 = I;%{F#349CFE}%{F-}
+;ws-icon-1 = II;%{F#FF0A98}%{F-}
+;ws-icon-2 = III;%{F#FF740A}%{F-}
+;ws-icon-3 = IV;%{F#E0AF68}%{F-}
+;ws-icon-4 = V;%{F#9ECE6A}%{F-}
+;ws-icon-default = o
+
+ws-icon-0 = I;1
+ws-icon-1 = II;2
+ws-icon-2 = III;3
+ws-icon-3 = IV;4
+ws-icon-4 = V;5
 ws-icon-default = o
 
 [module/i3]
@@ -289,26 +302,26 @@ label-mode-foreground = #000
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
-label-focused = %icon%
+label-focused =  %icon% 
 label-focused-background = ${colors.background}
 label-focused-underline = ${colors.secondary}
 label-focused-padding = 2
 label-focused-font = 3
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %icon%
+label-unfocused =  %icon% 
 label-unfocused-padding = 2
 label-unfocused-font = 3
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %icon%
+label-visible =  %icon% 
 label-visible-background = ${self.label-focused-background}
 label-visible-underline = ${self.label-focused-underline}
 label-visible-padding = ${self.label-focused-padding}
 label-visible-font = 3
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %icon%
+label-urgent =  %icon% 
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 label-urgent-font = 3
@@ -417,7 +430,6 @@ label = "%date%%time%"
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <ramp-volume> <label-volume>
-format-volume-font = 10
 format-volume-padding = 0
 label-volume = %percentage%%
 label-muted = muted
