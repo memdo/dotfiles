@@ -1,4 +1,4 @@
-background_opacity: 0.97
+background_opacity: 0.9
 window:
   padding:
     x: 12
@@ -11,20 +11,20 @@ scrolling:
 
 font:
   normal:
-    family: SF Mono
-    style: Semibold
+    family: Fira Code
+    style: Medium
 
   bold:
-    family: SF Mono
-    style: Bold
+    family: Fira Code
+    style: Semibold
   
   italic:
-    family: SF Mono
-    style: Semibold Italic 
+    family: Fira Code
+    style: Medium 
   
   bold_italic:
-    family: SF Mono
-    style: Bold Italic
+    family: Fira Code
+    style: Semibold Italic
   
   size: 19
 
@@ -36,7 +36,7 @@ font:
 
 colors:
   primary:
-    background: '#111111'
+    background: '#121212'
     # background: '#191919'
     foreground: '#c5e2e2'
     #dim_foreground: '#9a9a9a'
@@ -50,7 +50,7 @@ colors:
     blue:    '#1f7edd'
     magenta: '#841fdd'
     cyan:    '#1fd4dd'
-    white:   '#828791'
+    white:   '#e6efff'
   bright:
     black:   '#5c6370'
     red:     '#e06c75'
